@@ -110,7 +110,7 @@ function Header() {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="p-2 ms-auto">
-            <Nav.Link className=' link text-light' href="/home">Home</Nav.Link>
+            <Nav.Link className=' link text-light' href="/">Home</Nav.Link>
             <Nav.Link className='link text-light' href="#about">About</Nav.Link>
             <Nav.Link className='link text-light' href="#education">Education</Nav.Link>
             <Nav.Link className=' link text-light' href="#experience">Experience</Nav.Link>
