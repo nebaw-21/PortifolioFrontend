@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { APP_URL } from '../../../config';
 
-function About_add() {
+function AboutAdd() {
   const [fname, setFname] = useState([]);
   const [lname, setLname] = useState([]);
   const [dateOfBirth, setDateOfBirth] = useState([]);
@@ -14,7 +14,8 @@ function About_add() {
   const [image, setImage] = useState([]);
   const [aboutMeDescription, setAboutMeDescription] = useState([]);
   const [contactMeDescription, setContactMeDescription] = useState([]);
-  const [error, setErrors] = useState([]);
+
+  
 
 
   const handleSubmit = async (e) => {
@@ -47,7 +48,7 @@ function About_add() {
       if (error.response && error.response.status === 422) {
         // Validation error occurred, get the error response from the server
         const errorResponse = error.response.data;
-        setErrors(errorResponse.errors);
+        //setErrors(errorResponse.errors);
         const errorMessages = Object.values(errorResponse.errors).join("\n");
         alert("Validation errors:\n" + errorMessages);
       } else {
@@ -151,4 +152,4 @@ onChange={(e) => setPhone(e.target.value)}  type="text" className="form-control"
   );
   }
   
-  export default About_add;
+  export default AboutAdd;

@@ -1,15 +1,13 @@
 import { Link } from 'react-router-dom';
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { APP_URL } from '../../../config';
 
 
-function Experience_add() {
+function ExperienceAdd() {
   const [experience, setExperience] = useState([]);
   const [date, setDate] = useState([]);
   const [description, setDescription] = useState([]);
-  const [error, setErrors] = useState([]);
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -34,7 +32,7 @@ function Experience_add() {
       if (error.response && error.response.status === 422) {
         // Validation error occurred, get the error response from the server
         const errorResponse = error.response.data;
-        setErrors(errorResponse.errors);
+       // setErrors(errorResponse.errors);
         const errorMessages = Object.values(errorResponse.errors).join("\n");
         alert("Validation errors:\n" + errorMessages);
       } else {
@@ -89,4 +87,4 @@ onChange={(e) => setDescription(e.target.value)} className="form-control" id="ex
     );
   }
   
-  export default Experience_add;
+  export default ExperienceAdd;

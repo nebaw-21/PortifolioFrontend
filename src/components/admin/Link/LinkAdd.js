@@ -4,7 +4,7 @@ import axios from "axios";
 import { APP_URL } from '../../../config';
 
 
-function Link_add() {
+function LinkAdd() {
   const [facebook, setFacebook] = useState([]);
   const [instagram, setInstagram] = useState([]);
   const [tweeter, setTweeter] = useState([]);
@@ -97,4 +97,4 @@ onChange={(e) => setLinkedin(e.target.value)} type="text" className="form-contro
     );
   }
   
-  export default Link_add;
+  export default LinkAdd;

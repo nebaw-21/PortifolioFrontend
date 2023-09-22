@@ -4,7 +4,7 @@ import axios from "axios";
 import { APP_URL } from '../../../config';
 
 
-function Link_edit() {
+function LinkEdit() {
   const { id } = useParams(); 
   const [facebook, setFacebook] = useState([]);
   const [instagram, setInstagram] = useState([]);
@@ -123,4 +123,4 @@ function Link_edit() {
     );
   }
   
-  export default Link_edit;
+  export default LinkEdit;

@@ -3,7 +3,7 @@ import React, {useState, useEffect}from 'react';
 import axios from 'axios';
 import { APP_URL } from '../../../config';
 
-function Testimonial_display() {
+function TestimonialDisplay() {
   const [data, setData] = useState([]);
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Testimonial_display() {
 
   const deleteOperation = async(id)=> {
     try {
-      const result = await axios.delete(`${APP_URL}/api/deleteTestimonial/${id}`);
+       await axios.delete(`${APP_URL}/api/deleteTestimonial/${id}`);
       
       // Handle the result or perform any necessary actions
     } catch (error) {
@@ -94,4 +94,4 @@ function Testimonial_display() {
     );
   }
   
-  export default Testimonial_display;
+  export default TestimonialDisplay;

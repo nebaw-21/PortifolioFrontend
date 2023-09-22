@@ -11,7 +11,6 @@ import { APP_URL } from '../config';
 function Header() {
 
   const [user, setUser] = useState(null);
-  const [data, setData] = useState([]);
   const [information, setInformation] = useState([]);
   const [links, setLinks] = useState([]);
 

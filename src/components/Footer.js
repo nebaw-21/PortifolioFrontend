@@ -4,7 +4,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from "react-router-dom";
 import { APP_URL } from '../config';
 
 

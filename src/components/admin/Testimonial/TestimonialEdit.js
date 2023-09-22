@@ -2,15 +2,14 @@ import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { APP_URL } from '../../../config';
-function Testimonial_edit() {
+function TestimonialEdit() {
 
   const { id } = useParams(); 
   const [image, setImage] = useState([]);
   const [description, setDescription] = useState([]);
   const [name, setName] = useState([]);
-  const [error, setErrors] = useState([]);
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   
   useEffect(() => {
@@ -54,7 +53,7 @@ function Testimonial_edit() {
       if (error.response && error.response.status === 422) {
         // Validation error occurred, get the error response from the server
         const errorResponse = error.response.data;
-        setErrors(errorResponse.errors);
+        //setErrors(errorResponse.errors);
         const errorMessages = Object.values(errorResponse.errors).join("\n");
         alert("Validation errors:\n" + errorMessages);
       } else {
@@ -120,4 +119,4 @@ function Testimonial_edit() {
     );
   }
   
-  export default Testimonial_edit;
+  export default TestimonialEdit;

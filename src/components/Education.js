@@ -1,6 +1,5 @@
 import '../style/education.css';
-import { FaUniversity,AiOutlineLine } from 'react-icons/fa';
-import { TbDots } from "react-icons/tb";
+import { FaUniversity } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { APP_URL } from '../config';

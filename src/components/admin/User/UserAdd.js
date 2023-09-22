@@ -1,15 +1,15 @@
-import Header from "../../Header";
+
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import { APP_URL } from '../../../config';
 
-function User_add()
+function UserAdd()
 {  
 const[name , setName]= useState("");
 const[password , setPassword]= useState("");
-const[errors, setErrors]= useState({});
+
 
  const handleSubmit=async (e)=>
 {
@@ -32,7 +32,7 @@ const[errors, setErrors]= useState({});
     if (error.response && error.response.status === 422) {
       // Validation error occurred, get the error response from the server
       const errorResponse = error.response.data;
-      setErrors(errorResponse.errors);
+     // setErrors(errorResponse.errors);
       const errorMessages = Object.values(errorResponse.errors).join("\n");
       alert("Validation errors:\n" + errorMessages);
 
@@ -102,4 +102,4 @@ const[errors, setErrors]= useState({});
     );
   }
 
-  export default User_add;
+  export default UserAdd;

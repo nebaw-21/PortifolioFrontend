@@ -4,7 +4,7 @@ import axios from 'axios';
 import { APP_URL } from '../../../config';
 
 
-function About_display() {
+function AboutDisplay() {
 
   const [data, setData] = useState([]);
 
@@ -90,4 +90,4 @@ function About_display() {
     );
   }
   
-  export default About_display;
+  export default AboutDisplay;

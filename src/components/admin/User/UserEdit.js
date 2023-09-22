@@ -1,4 +1,3 @@
-import Header from "../../Header";
 import { useParams } from "react-router-dom";
 import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
@@ -6,14 +5,12 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { APP_URL } from '../../../config';
 
-function User_edit(){ 
+function UserEdit(){ 
     const [name, setName] = useState("");
     const [password, setPassword] = useState("");
-    const [error, setErrors] = useState([]);
     const { id } = useParams(); 
-
-    const [data, setData] = useState({});
     const [loading, setLoading] = useState(true);
+    const [data, setData] = useState([]);
 
 
       useEffect(() => {
@@ -53,7 +50,7 @@ function User_edit(){
           if (error.response && error.response.status === 422) {
             // Validation error occurred, get the error response from the server
             const errorResponse = error.response.data;
-            setErrors(errorResponse.errors);
+            //setErrors(errorResponse.errors);
             const errorMessages = Object.values(errorResponse.errors).join("\n");
             alert("Validation errors:\n" + errorMessages);
           } else {
@@ -121,5 +118,5 @@ function User_edit(){
     );
   }
 
-  export default User_edit
+  export default UserEdit
   ;

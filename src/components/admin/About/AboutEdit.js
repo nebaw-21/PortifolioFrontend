@@ -2,7 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { APP_URL } from '../../../config';
-function About_edit()
+function AboutEdit()
  {
   const { id } = useParams(); 
   const [fname, setFname] = useState([]);
@@ -15,9 +15,8 @@ function About_edit()
   const [image, setImage] = useState(null);
   const [aboutMeDescription, setAboutMeDescription] = useState([]);
   const [contactMeDescription, setContactMeDescription] = useState([]);
-  const [error, setErrors] = useState([]);
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
 
   useEffect(() => {
@@ -78,7 +77,7 @@ function About_edit()
       if (error.response && error.response.status === 422) {
         // Validation error occurred, get the error response from the server
         const errorResponse = error.response.data;
-        setErrors(errorResponse.errors);
+        //setErrors(errorResponse.errors);
         const errorMessages = Object.values(errorResponse.errors).join("\n");
         alert("Validation errors:\n" + errorMessages);
       } else {
@@ -184,4 +183,4 @@ function About_edit()
     );
   }
   
-  export default About_edit;
+  export default AboutEdit;

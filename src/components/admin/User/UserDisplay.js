@@ -1,17 +1,14 @@
 
-import Header from '../../Header';
+
 import { Link } from 'react-router-dom';
-import { Container, Row, Col, Button } from 'react-bootstrap';
+import { Container} from 'react-bootstrap';
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
 import { APP_URL } from '../../../config';
 
-function User_display() {
+function UserDisplay() {
   const [data, setData] = useState([]);
-
-    const [user, setUser] = useState(null);
-
-
+  const [user, setUser] = useState([]);
 
   useEffect(() => {
     const token = localStorage.getItem('token');
@@ -53,7 +50,7 @@ function User_display() {
 
   const deleteOperation = async(id)=> {
     try {
-      const result = await axios.delete(`${APP_URL}/api/deleteUser/${id}`);
+       await axios.delete(`${APP_URL}/api/deleteUser/${id}`);
       
       // Handle the result or perform any necessary actions
     } catch (error) {
@@ -139,4 +136,4 @@ function User_display() {
   );
 }
 
-export default User_display;
+export default UserDisplay;

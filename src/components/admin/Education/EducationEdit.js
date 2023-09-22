@@ -3,15 +3,14 @@ import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { APP_URL } from '../../../config';
 
-function Education_edit() {
+function EducationEdit() {
 
   const { id } = useParams(); 
   const [education, setEducation] = useState([]);
   const [date, setDate] = useState([]);
   const [description, setDescription] = useState([]);
-  const [error, setErrors] = useState([]);
-  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
 
   
   useEffect(() => {
@@ -57,7 +56,7 @@ function Education_edit() {
       if (error.response && error.response.status === 422) {
         // Validation error occurred, get the error response from the server
         const errorResponse = error.response.data;
-        setErrors(errorResponse.errors);
+       // setErrors(errorResponse.errors);
         const errorMessages = Object.values(errorResponse.errors).join("\n");
         alert("Validation errors:\n" + errorMessages);
       } else {
@@ -118,4 +117,4 @@ function Education_edit() {
     );
   }
   
-  export default Education_edit;
+  export default EducationEdit;

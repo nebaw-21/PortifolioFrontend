@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
 import { APP_URL } from '../../../config';
-function Education_display() {
+function EducationDisplay() {
 
  const [data, setData] = useState([]);
 
@@ -22,7 +22,7 @@ function Education_display() {
 
   const deleteOperation = async(id)=> {
     try {
-      const result = await axios.delete(`${APP_URL}/api/deleteEducation/${id}`);
+    await axios.delete(`${APP_URL}/api/deleteEducation/${id}`);
       
       // Handle the result or perform any necessary actions
     } catch (error) {
@@ -94,4 +94,4 @@ function Education_display() {
     );
   }
   
-  export default Education_display;
+  export default EducationDisplay;
