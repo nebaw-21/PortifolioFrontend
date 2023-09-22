@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 
 function Experience_add() {
@@ -19,7 +20,7 @@ function Experience_add() {
       formData.append("date", date);
       formData.append("description", description);
     
-      const response = await axios.post("http://localhost:8000/api/addExperience", formData, {
+      const response = await axios.post(`${APP_URL}/api/addExperience`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
+import { APP_URL } from '../../../config';
 
 
 function About_display() {
@@ -10,7 +11,7 @@ function About_display() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayInformation');
+        const response = await axios.post(`${APP_URL}/api/displayInformation`);
         const result = response.data;
         setData(result);
       } catch (error) {

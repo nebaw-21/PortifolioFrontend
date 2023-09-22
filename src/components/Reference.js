@@ -6,6 +6,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; // You can also use <link> for styles
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 AOS.init();
 
 
@@ -17,7 +18,7 @@ function Reference() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayTestimonial');
+        const response = await axios.post(`${APP_URL}/api/displayTestimonial`);
         const result = response.data;
         setTestimonials(result);
       } catch (error) {
@@ -30,9 +31,6 @@ function Reference() {
 
 
 
-
-
-  
   const CustomArrow = ({ direction, onClick }) => (
     <button className={`custom-arrow custom-${direction}  `} onClick={onClick}>
       {direction === 'prev' ? (
@@ -69,7 +67,7 @@ function Reference() {
         <Carousel.Item key={index}>
           <div className="testimonial-slide  shadow-lg p-3 mb-5 bg-body-tertiary rounded">
             <img
-            src={"http://localhost:8000/" + testimonial.image}
+            src={`${APP_URL}/` + testimonial.image}
               alt={`Testimonial ${index + 1}`}
               className="testimonial-image"
             />

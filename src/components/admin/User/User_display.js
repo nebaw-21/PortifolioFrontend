@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
+import { APP_URL } from '../../../config';
 
 function User_display() {
   const [data, setData] = useState([]);
@@ -17,7 +18,7 @@ function User_display() {
 
     if (token) {
       axios
-        .post('http://localhost:8000/api/user', null, {
+        .post(`${APP_URL}/api/user`, null, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
@@ -39,7 +40,7 @@ function User_display() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayUser');
+        const response = await axios.post(`${APP_URL}/api/displayUser`);
         const result = response.data;
         setData(result);
       } catch (error) {
@@ -52,7 +53,7 @@ function User_display() {
 
   const deleteOperation = async(id)=> {
     try {
-      const result = await axios.delete(`http://localhost:8000/api/deleteUser/${id}`);
+      const result = await axios.delete(`${APP_URL}/api/deleteUser/${id}`);
       
       // Handle the result or perform any necessary actions
     } catch (error) {
@@ -62,7 +63,7 @@ function User_display() {
   }
   
   async function getData(){
-    let response = await axios.post("http://localhost:8000/api/displayUser");
+    let response = await axios.post(`${APP_URL}/api/displayUser`);
     
     const result = response.data;
     setData(result);

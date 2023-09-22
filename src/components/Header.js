@@ -5,6 +5,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import '../App.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 
   
 function Header() {
@@ -19,7 +20,7 @@ function Header() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayInformation');
+        const response = await axios.post(`${APP_URL}/api/displayInformation`);
         const result = response.data;
         setInformation(result);
       } catch (error) {
@@ -33,7 +34,7 @@ function Header() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayLink');
+        const response = await axios.post(`${APP_URL}/api/displayLink`);
         const result = response.data;
         setLinks(result);
       } catch (error) {
@@ -49,7 +50,7 @@ function Header() {
 
     if (token) {
       axios
-        .post('http://localhost:8000/api/user', null, {
+        .post(`${APP_URL}/api/user`, null, {
           headers: {
             'Content-Type': 'application/json',
             Authorization: `Bearer ${token}`,
@@ -74,7 +75,7 @@ function Header() {
     if (token) {
       axios
         .post(
-          'http://localhost:8000/api/logout',
+          `${APP_URL}/api/logout`,
           null,
           {
             headers: {
@@ -155,7 +156,7 @@ function Header() {
    
           <img
             className="Nahome_photo rounded-circle"
-            src={"http://localhost:8000/" + item.image}
+            src={`${APP_URL}/` + item.image}
             alt="Nahom"
           />
         

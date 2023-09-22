@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 function About_add() {
   const [fname, setFname] = useState([]);
@@ -32,7 +33,7 @@ function About_add() {
       formData.append("aboutMeDescription", aboutMeDescription);
       formData.append("contactMeDescription", contactMeDescription);
   
-      const response = await axios.post("http://localhost:8000/api/addInformation", formData, {
+      const response = await axios.post(`${APP_URL}/api/addInformation`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

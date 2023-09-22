@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 
 function Link_edit() {
@@ -17,7 +18,7 @@ function Link_edit() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`http://localhost:8000/api/displaySpecificLink/${id}`);
+        const response = await axios.post(`${APP_URL}/api/displaySpecificLink/${id}`);
         const result = response.data;
         setData(result);
         setLoading(false);
@@ -44,7 +45,7 @@ function Link_edit() {
       formData.append("tweeter", tweeter);
       formData.append("linkedin", linkedin);
   
-      const response = await axios.post(`http://localhost:8000/api/updateLink/${id}`, formData, {
+      const response = await axios.post(`${APP_URL}/api/updateLink/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

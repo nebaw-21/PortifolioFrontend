@@ -3,6 +3,7 @@ import { FiLink } from "react-icons/fi";
 import 'bootstrap/dist/css/bootstrap.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 
 function Experience() {
   const [experiences, setExperiences] = useState([]);
@@ -10,7 +11,7 @@ function Experience() {
   useEffect(() => {
   const fetchData = async () => {
     try {
-      const response = await axios.post('http://localhost:8000/api/displayExperience');
+      const response = await axios.post(`${APP_URL}/api/displayExperience`);
       const result = response.data;
       setExperiences(result);
     } catch (error) {

@@ -5,6 +5,7 @@ import { FaFacebook, FaTwitter, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import { APP_URL } from '../config';
 
 
 function Footer() {
@@ -14,7 +15,7 @@ function Footer() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayLink');
+        const response = await axios.post(`${APP_URL}/api/displayLink`);
         const result = response.data;
         setLinks(result);
       } catch (error) {

@@ -3,6 +3,7 @@ import { FaUniversity,AiOutlineLine } from 'react-icons/fa';
 import { TbDots } from "react-icons/tb";
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 
 
 function Education() {
@@ -11,7 +12,7 @@ function Education() {
     useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayEducation');
+        const response = await axios.post(`${APP_URL}/api/displayEducation`);
         const result = response.data;
         setSchools(result);
       } catch (error) {

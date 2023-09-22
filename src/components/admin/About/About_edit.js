@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { APP_URL } from '../../../config';
 function About_edit()
  {
   const { id } = useParams(); 
@@ -22,7 +23,7 @@ function About_edit()
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`http://localhost:8000/api/displaySpecificInformation/${id}`);
+        const response = await axios.post(`${APP_URL}/api/displaySpecificInformation/${id}`);
         const result = response.data;
         setData(result);
         setLoading(false);
@@ -63,7 +64,7 @@ function About_edit()
       formData.append("aboutMeDescription", aboutMeDescription);
       formData.append("contactMeDescription", contactMeDescription);
   
-      const response = await axios.post(`http://localhost:8000/api/updateInformation/${id}`, formData, {
+      const response = await axios.post(`${APP_URL}/api/updateInformation/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

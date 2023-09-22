@@ -1,7 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
-
+import { APP_URL } from '../../../config';
 function Testimonial_edit() {
 
   const { id } = useParams(); 
@@ -16,7 +16,7 @@ function Testimonial_edit() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`http://localhost:8000/api/displaySpecificTestimonial/${id}`);
+        const response = await axios.post(`${APP_URL}/api/displaySpecificTestimonial/${id}`);
         const result = response.data;
         setData(result);
         setLoading(false);
@@ -40,7 +40,7 @@ function Testimonial_edit() {
       formData.append("description", description);
       formData.append("name", name);
     
-      const response = await axios.post(`http://localhost:8000/api/updateTestimonial/${id}`, formData, {
+      const response = await axios.post(`${APP_URL}/api/updateTestimonial/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

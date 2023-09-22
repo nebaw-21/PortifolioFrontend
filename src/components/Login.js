@@ -1,6 +1,7 @@
 import '../style/login.css';
 import React, { useState } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 
 function Login() {
   const [name, setName] = useState('');
@@ -11,7 +12,7 @@ function Login() {
     e.preventDefault();
 
     axios
-      .post('http://localhost:8000/api/login', { name, password })
+      .post(`${APP_URL}/api/login`, { name, password })
       .then((response) => {
         if (response.status === 200) {
           // Store the token in local storage

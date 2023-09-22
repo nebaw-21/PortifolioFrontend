@@ -2,6 +2,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import '../style/about.css';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 
 function About() {
   const [data, setData] = useState([]);
@@ -9,7 +10,7 @@ function About() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayInformation');
+        const response = await axios.post(`${APP_URL}/api/displayInformation`);
         const result = response.data;
         setData(result);
       } catch (error) {

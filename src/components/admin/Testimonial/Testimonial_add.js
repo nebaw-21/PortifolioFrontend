@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 function Testimonial_add() {
 
@@ -19,7 +20,7 @@ function Testimonial_add() {
       formData.append("description", description);
       formData.append("name", name);
   
-      const response = await axios.post("http://localhost:8000/api/addTestimonial", formData, {
+      const response = await axios.post(`${APP_URL}/api/addTestimonial`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

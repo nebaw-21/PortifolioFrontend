@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
+import { APP_URL } from '../../../config';
 
 function Experience_display() {
   const [data, setData] = useState([]);
@@ -8,7 +9,7 @@ function Experience_display() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayExperience');
+        const response = await axios.post(`${APP_URL}/api/displayExperience`);
         const result = response.data;
         setData(result);
       } catch (error) {
@@ -21,7 +22,7 @@ function Experience_display() {
 
   const deleteOperation = async(id)=> {
     try {
-      const result = await axios.delete(`http://localhost:8000/api/deleteExperience/${id}`);
+      const result = await axios.delete(`${APP_URL}/api/deleteExperience/${id}`);
       
       // Handle the result or perform any necessary actions
     } catch (error) {
@@ -31,7 +32,7 @@ function Experience_display() {
   }
   
   async function getData(){
-    let response = await axios.post("http://localhost:8000/api/displayExperience");
+    let response = await axios.post(`${APP_URL}/api/displayExperience`);
     
     const result = response.data;
     setData(result);

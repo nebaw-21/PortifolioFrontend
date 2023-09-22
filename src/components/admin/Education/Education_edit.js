@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 function Education_edit() {
 
@@ -16,7 +17,7 @@ function Education_edit() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`http://localhost:8000/api/displaySpecificEducation/${id}`);
+        const response = await axios.post(`${APP_URL}/api/displaySpecificEducation/${id}`);
         const result = response.data;
         setData(result);
         setLoading(false);
@@ -42,7 +43,7 @@ function Education_edit() {
       formData.append("date", date);
       formData.append("description", description);
   
-      const response = await axios.post(`http://localhost:8000/api/updateEducation/${id}`, formData, {
+      const response = await axios.post(`${APP_URL}/api/updateEducation/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

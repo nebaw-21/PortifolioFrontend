@@ -4,6 +4,7 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { APP_URL } from '../../../config';
 
 function User_edit(){ 
     const [name, setName] = useState("");
@@ -18,7 +19,7 @@ function User_edit(){
       useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.post(`http://localhost:8000/api/displaySpecificUser/${id}`);
+            const response = await axios.post(`${APP_URL}/api/displaySpecificUser/${id}`);
             const result = response.data;
             setData(result);
             setLoading(false);
@@ -38,7 +39,7 @@ function User_edit(){
         e.preventDefault();
     
         try {
-          const response = await axios.put(`http://localhost:8000/api/updateUser/${id}`, {
+          const response = await axios.put(`${APP_URL}/api/updateUser/${id}`, {
             name,
             password,
           

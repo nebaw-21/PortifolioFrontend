@@ -2,6 +2,7 @@ import { Link, useParams } from 'react-router-dom';
 import React, { useState, useEffect } from 'react';
 import axios from "axios";
 import Experience from '../../Experience';
+import { APP_URL } from '../../../config';
 
 function Experience_edit() {
   const { id } = useParams(); 
@@ -16,7 +17,7 @@ function Experience_edit() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post(`http://localhost:8000/api/displaySpecificExperience/${id}`);
+        const response = await axios.post(`${APP_URL}/api/displaySpecificExperience/${id}`);
         const result = response.data;
         setData(result);
         setLoading(false);
@@ -42,7 +43,7 @@ function Experience_edit() {
       formData.append("experience", experience);
       formData.append("description", description);
   
-      const response = await axios.post(`http://localhost:8000/api/updateExperience/${id}`, formData, {
+      const response = await axios.post(`${APP_URL}/api/updateExperience/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

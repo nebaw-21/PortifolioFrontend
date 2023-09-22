@@ -3,6 +3,7 @@ import { Form, Button, Container, Row, Col } from 'react-bootstrap';
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
+import { APP_URL } from '../../../config';
 
 function User_add()
 {  
@@ -15,7 +16,7 @@ const[errors, setErrors]= useState({});
   e.preventDefault();
 
   try {
-    const response = await axios.post("http://localhost:8000/api/addUser", {
+    const response = await axios.post(`${APP_URL}/api/addUser`, {
       name,
       password,
 

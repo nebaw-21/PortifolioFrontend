@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, {useState, useEffect}from 'react';
 import axios from 'axios';
+import { APP_URL } from '../../../config';
 
 function Link_display() {
 
@@ -9,7 +10,7 @@ function Link_display() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.post('http://localhost:8000/api/displayLink');
+        const response = await axios.post(`${APP_URL}/api/displayLink`);
         const result = response.data;
         setData(result);
       } catch (error) {

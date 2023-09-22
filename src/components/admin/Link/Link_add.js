@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 
 function Link_add() {
@@ -22,7 +23,7 @@ function Link_add() {
       formData.append("linkedin", linkedin);
 
   
-      const response = await axios.post("http://localhost:8000/api/addLink", formData, {
+      const response = await axios.post(`${APP_URL}/api/addLink`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

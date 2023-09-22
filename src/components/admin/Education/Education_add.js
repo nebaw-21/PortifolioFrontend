@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { APP_URL } from '../../../config';
 
 function Education_add() {
 
@@ -19,7 +20,7 @@ function Education_add() {
       formData.append("date", date);
       formData.append("description", description);
     
-      const response = await axios.post("http://localhost:8000/api/addEducation", formData, {
+      const response = await axios.post(`${APP_URL}/api/addEducation`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

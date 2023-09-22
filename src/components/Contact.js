@@ -1,21 +1,41 @@
 import '../style/contact.css';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { APP_URL } from '../config';
 
 function Contact() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [successful, setSuccessful] = useState('');
+  const [data, setData ] = useState([]);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.post(`${APP_URL}/api/displayInformation`);
+        const result = response.data;
+        setData(result);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
   const sendEmail = () => {
+
+
+
+
+
     const data = {
       to: 'nebiyuzewge1993@gmail.com',
       subject: 'Contact Form Submission',
       body: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
     };
 
-    axios.post('http://localhost:8000/api/contact', data)
+    axios.post(`${APP_URL}/api/contact`, data)
       .then(response => {
         window.location.href = '/home';
         setSuccessful("Email sent successfully!!");
@@ -80,14 +100,10 @@ function Contact() {
                 Contact Me
               </p>
               <p className="text-blk map-contactus-subhead">
-                Welcome to my personal website! As an experienced accountant,
-                 I am dedicated to providing exceptional financial services and guidance.
-                  Whether you have inquiries about tax planning, bookkeeping, or financial
-                   consulting, I'm here to assist you. Please feel free to contact me using
-                    the form below or through the provided email and phone number. Let's discuss 
-                    your financial needs and find tailored solutions to help you achieve your goals.
-                     I look forward to hearing from you!
-              </p>
+              {data.map((con) => (
+                <span>{con.contactMeDescription}</span>
+              ))}
+            </p>
               <div className="map-box container-block" data-aos="flip-right" data-aos-duration="800">
               </div>
             </div>
