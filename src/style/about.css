@@ -1,0 +1,60 @@
+.about-container {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 4px;
+  }
+  
+  .description {
+    /* Additional styles for the description section */
+  }
+  
+  .basic-info {
+    /* Additional styles for the basic information section */
+  }
+  
+  
+
+
+ul li{
+    font-size: large;
+    font-weight: bold;
+  }
+
+  ul li:hover{
+  transform: scale(1.05);
+  }
+  
+  
+  ul li .bio_text{
+    font-size: medium;
+    margin-left: 10px;
+    font-weight: 500;
+
+    
+  }
+
+  ul{
+    list-style: none;
+   
+  }
+
+  ul li{
+    margin:15px ;
+  }
+
+
+  .about_description{
+    font-size: 20px;
+    font-family: 'Times New Roman';
+  }
+ 
+  .about_description:hover{
+    transform: scale(1.05);
+   
+  }
+
+  .dashed p{
+    color: rgb(233, 155, 10);
+    font-size: 3rem;
+    text-align: center;
+  }

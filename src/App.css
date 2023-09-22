@@ -1,38 +1,56 @@
-.App {
-  text-align: center;
+
+.main{
+  background-color: rgb(243, 243, 243);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container-shadow-top {
+  box-shadow: 0px -4px 6px -1px rgba(0, 0, 0, 0.1);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Nahome_photo {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+ 
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.Nahome_photo:hover{
+  transform: scale(1.1);
 }
 
-.App-link {
-  color: #61dafb;
+.description:hover{
+  transform: scale(1.1);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.icons:hover{
+  transform: scale(1.5);
+}
+.background-image {
+  background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');
+  background-size: cover;
+  background-position: center;
+}
+
+.footer{
+  background-color: rgb(250, 249, 247);
+}
+
+.link:hover{
+background-color:gainsboro;
+}
+
+
+.Nahom_name{
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  
+}
+
+.Nahom_name:hover{
+transform: scale(1.05);
+  
+}
+
+
+.text-muted{
+  font-weight: 900;
 }

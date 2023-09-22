@@ -1,0 +1,120 @@
+.text-lightblue {
+    color: rgb(136, 218, 246);
+    
+  }
+
+  .text-green{
+    color: rgb(28, 195, 28);
+  }
+
+  .date{
+    font-weight: bolder;
+    font-size: 1rem;
+  }
+
+  .note{
+    font-weight: 600;
+    font-size: 1.1rem;
+
+  }
+
+  .name{
+    font-weight: bold;
+    font-size: 1.3rem;
+  }
+
+
+  @media only screen and (max-width: 500px)  {
+    /* CSS rules specific to small screens */
+    .edit_icon{
+        margin-left: 1rem;
+        margin-bottom: 19rem;
+        width: 17rem;
+        height: 52px;
+      }
+  
+    }
+
+
+    @media only screen and (min-width: 500px)  {
+        /* CSS rules specific to small screens */
+        .edit_icon{
+            margin-left: 1rem;
+            margin-bottom: 15rem;
+            width: 12rem;
+            height: 52px;
+          }
+      
+        }
+
+        
+    @media only screen and (min-width: 600px)  {
+        /* CSS rules specific to small screens */
+        .edit_icon{
+            margin-left: 1rem;
+            margin-bottom: 15rem;
+            width: 10rem;
+            height: 52px;
+          }
+      
+        }
+
+        @media only screen and (min-width: 720px)  {
+            /* CSS rules specific to small screens */
+            .edit_icon{
+                margin-left: 1rem;
+                margin-bottom: 10rem;
+                width: 7rem;
+                height: 52px;
+              }
+          
+            }
+
+
+            @media only screen and (min-width: 800px)  {
+              /* CSS rules specific to small screens */
+              .edit_icon{
+                  margin-left: 1rem;
+                  margin-bottom: 11rem;
+                  width: 9rem;
+                  height: 52px;
+                }
+            
+              }
+
+            @media only screen and (min-width: 900px)  {
+             
+                .edit_icon{
+                    margin-left: 1rem;
+                    margin-bottom: 11rem;
+                    width: 7.5rem;
+                    height: 52px;
+                  }
+              
+                }
+
+                @media only screen and (min-width: 1000px)  {
+             
+                  .edit_icon{
+                      margin-left: 1rem;
+                      margin-bottom: 8rem;
+                      width: 3.5rem;
+                      height: 52px;
+                    }
+
+                    .dashededu p{
+                      color: rgb(59, 151, 216);
+                      font-size: 3rem;
+                      text-align: center;
+                    }
+
+                    .dashedexe p{
+                      color: rgb(119, 237, 111);
+                      font-size: 3rem;
+                      text-align: center;
+                    }
+                
+                
+
+                  
+        }
